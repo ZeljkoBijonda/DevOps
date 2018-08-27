@@ -1,0 +1,14 @@
+POST /en/order HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://fo.demo.prestashop.com/en/order
+Accept-Language: en-US,en;q=0.8,hr-HR;q=0.5,hr;q=0.3
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+Host: fo.demo.prestashop.com
+Content-Length: 43
+DNT: 1
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: PrestaShop-4bb6ae1aa7371e7b5cfd3bc505157360=def502007712174060478fe1f083ba930f16665cd5cf4698bfae3cc91755d482689fc36513794675707e5e472c1517b0cb83dcb1cf6e03e2d244295453e4c44d85b93f897ce58a8124214174bfb755ed597eba454c68c0c76249604bea97fc240027f8bf62096a4ed14a5e48e3460b9a8d3b8c832397d35fa70fb5662c3344f655208b2919bfd069226707ede8c5b10fc51b63eb70b4677c16009ec6457e25a52ac74e77567d9d9d5fa6ab4d7361cae57e8918c0ed323bf7ea4fcc0e329dab4622e9eeaa6b22801be9c36a65ce1b52561a984db0f906dbda33077700eeb732f7313fa1a627a28d5f1dde3b18dc7b19e99a646b62abad1b9db21492fdec5e2b6639b5368da2534b85aae8c5baa1ed30330b402884ceb55d1a8201479a80e60cbb569012d55d33d14269d0c1fd0a79da56b258c0e5f2044603b7771a97640c832ad69abf7d9679e1aa2222233c3258eb931c03c0c4e602f0c07da5ae0242326f2d45d167ecb1b9c02f14852827650a9440c0ebda5b6cad37ce680ef8f3874e9d39b25c8cddf5ba905e08375563e2a28cce2ba21a6ac4417d6c2f362ef1d956bfb713d5c97539056344; PHPSESSID=jmb46882ffc1htc7cf324a2as6; _ga=GA1.3.207652262.1534923554; _gid=GA1.3.1115675473.1534923554; _hjIncludedInSample=1
+

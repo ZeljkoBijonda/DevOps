@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Thu, 23 Aug 2018 12:55:56 GMT
+Server: Apache
+X-UA-Compatible: IE=edge,chrome=1
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+Powered-By: PrestaShop
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: PrestaShop-4bb6ae1aa7371e7b5cfd3bc505157360=def50200e00351c8f7d638923f7cf71b62bf99388a15655a467dfa2e606dfd2de0bf232dde0ef8f8b371afa20455d9c8a0b6886553f65d9c3049ccff99d39d44f95861c8c110134ab6eaf05b7b8ddbbded8ba766a7f4aae665fd73ca55e869d5685658eeb2697f66fe2122114041fbfd66ab95f9d3646d8fefdad9da404fb585c8d4cdfc1795cdab4a68a9526b320cb3a83b78f2c09d1c53ae8958050f05beec7c841b1ee09ddc6705c3b3d5c2e2745edd81037b25903d8f03ab3619726c5da3199279d916d39a2dce537c5d8c50f24335414fbc9213ceadd2ebef155d80eb78f119414cdd88bf916ebb; expires=Wed, 12-Sep-2018 12:55:56 GMT; Max-Age=1728000; path=/; domain=fo.demo.prestashop.com; httponly
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 6333
+Keep-Alive: timeout=5, max=97
+Connection: Keep-Alive
+Content-Type: text/html; charset=utf-8
+

@@ -1,0 +1,71 @@
+[General]
+Type=Multi
+DefaultCfg=default.cfg
+ParameterFile=
+GlobalParameterFile=
+NewFunctionHeader=1
+RunType=cci
+ActionLogicExt=action_logic
+LastActiveAction=Action
+MajorVersion=12
+MinorVersion=56
+ActiveTypes=QTWeb
+GenerateTypes=QTWeb
+AdditionalTypes=QTWeb
+DevelopTool=Vugen
+LastModifyVer=12.56.0.985
+ParamLeftBrace={
+ParamRightBrace=}
+ScriptLanguage=C
+LastCodeGenerationVer=12.56.0.985
+DisableRegenerate=0
+Encoding=ANSI
+Description=
+ScriptLocale=en-US
+[Actions]
+vuser_init=vuser_init.c
+Action=Action.c
+CreateOrder=CreateOrder.c
+vuser_end=vuser_end.c
+[RunLogicFiles]
+Default Profile=default.usp
+[VuserProfiles]
+Profiles=Default Profile
+[CfgFiles]
+Default Profile=default.cfg
+[ExtraFiles]
+AsyncCallbacks.c=
+globals.h=
+[Modified Actions]
+vuser_init=0
+Action=1
+CreateOrder=1
+vuser_end=0
+[Recorded Actions]
+vuser_init=0
+Action=1
+CreateOrder=1
+vuser_end=0
+[Replayed Actions]
+vuser_init=1
+Action=1
+CreateOrder=1
+vuser_end=1
+[Interpreters]
+vuser_init=cci
+Action=cci
+CreateOrder=cci
+vuser_end=cci
+[TransactionsOrder]
+Order="Login__*delimiter*__CreateOrder__*delimiter*__Logout"
+[StateManagement]
+LastReplayStatus=1
+[ActiveReplay]
+LastReplayedRunName=result1
+ActiveRunName=result1
+[Transactions]
+Login=
+CreateOrder=
+Logout=
+[ExtraFilesToParse]
+AsyncCallbacks.c=
