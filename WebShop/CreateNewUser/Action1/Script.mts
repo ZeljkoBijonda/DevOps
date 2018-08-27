@@ -3,7 +3,8 @@ Dim lngRND
 Randomize
 lngRND = int ((1000000000+1)*rnd)
 
-Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow").Click
+'Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow").Click
+Browser("PrestaShop Demo_2").Page("PrestaShop Demo").WebElement("Hide").Click
 Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame").Link(" Sign in").Click
 Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame_2").Link("No account? Create one").Click
 Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame_3").WebEdit("firstname").Set "FirstName" 
@@ -18,4 +19,5 @@ Set objFileToWrite = CreateObject("Scripting.FileSystemObject").OpenTextFile("C:
 objFileToWrite.WriteLine("mail" & lngRND & "@mail.com" & ";" & "5b7d1369b22f318779627736662823f89539e6c39a1d3a74") @@ hightlight id_;_Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame 3").WebEdit("email")_;_script infofile_;_ZIP::ssf6.xml_;_
 objFileToWrite.Close
 Set objFileToWrite = Nothing
+
 

@@ -1,4 +1,6 @@
-﻿Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow").Click @@ hightlight id_;_Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow")_;_script infofile_;_ZIP::ssf1.xml_;_
+﻿'Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow").Click @@ hightlight id_;_Browser("PrestaShop Demo").Page("PrestaShop Demo").Link("HideShow")_;_script infofile_;_ZIP::ssf1.xml_;_
+Browser("PrestaShop Demo_2").Page("PrestaShop Demo").WebElement("Hide").Click
+
 Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame").Link(" Sign in").Click @@ hightlight id_;_Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame").Link(" Sign in")_;_script infofile_;_ZIP::ssf2.xml_;_
 wait(1)
 Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame_2").WebEdit("email").Set "a@b.com" @@ hightlight id_;_Browser("PrestaShop Demo").Page("PrestaShop Demo").Frame("Frame 2").WebEdit("email")_;_script infofile_;_ZIP::ssf3.xml_;_
