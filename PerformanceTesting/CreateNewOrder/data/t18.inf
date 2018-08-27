@@ -1,0 +1,11 @@
+[t18]
+FileName1=t18.htm
+URL1=http://fo.demo.prestashop.com/en/order-confirmation?id_cart=2656&id_module=28&id_order=297&key=2a1e2764903a5d3c49cbe4fac8de34a9
+Total=1
+RequestHeaderFile=t18_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t18_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_18.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

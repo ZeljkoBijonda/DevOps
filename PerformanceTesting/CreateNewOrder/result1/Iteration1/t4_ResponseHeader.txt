@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Thu, 23 Aug 2018 13:00:53 GMT
+Connection: Keep-Alive
+Accept-Ranges: bytes
+ETag: "1534865794"
+Cache-Control: max-age=31372573
+Content-Encoding: gzip
+Content-Length: 857
+Content-Type: text/html
+Last-Modified: Tue, 21 Aug 2018 15:36:34 GMT
+X-HW: 1535029253.dop022.fr7.t,1535029253.cds068.fr7.shn,1535029253.cds068.fr7.c
+

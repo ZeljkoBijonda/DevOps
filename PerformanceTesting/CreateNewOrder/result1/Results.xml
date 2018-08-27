@@ -1,0 +1,516 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED SolManSolutionId CDATA #IMPLIED SolManProjectId CDATA #IMPLIED SolManTestPlanId CDATA #IMPLIED SolManTestPackageId CDATA #IMPLIED SolManUserInfoData CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,ConfName?,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Doc*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC|BPTWrapperTest|Flow|Group|Action) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT ConfName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step*,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*, Summary,ActionMaintenanceSummary*, NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,DataMapping?, Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED isCountable (False|True) "False" >
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*, DataMapping?, NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT DataMapping ( DataMappedItem* )>
+<!ELEMENT DataMappedItem EMPTY >
+<!ATTLIST DataMappedItem dsName CDATA #REQUIRED >
+<!ATTLIST DataMappedItem rowId CDATA #REQUIRED >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?,ExtendedInfo? )>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED UserNote CDATA #IMPLIED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED StepFlowItemKey CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT ExtendedInfo ( StepData ) >
+
+<!ATTLIST ExtendedInfo StepType CDATA #REQUIRED>
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="Central European Standard Time">
+<General productName="Vugen" productVer="12" os="" host="NIMBUSCLIENT"><DocLocation><![CDATA[C:\Users\demo\Documents\VuGen\Scripts\WebHttpHtml1]]></DocLocation></General>
+<Doc rID="T1"   productName= "Vugen"  >
+<DName><![CDATA[WebHttpHtml1]]></DName>
+<Res><![CDATA[result1]]></Res>
+<Action rID="T2">
+<AName><![CDATA[vuser_init]]></AName>
+<Summary sTime="23-Aug-18 - 15:02:20" eTime="23-Aug-18 - 15:02:20" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" >
+<Disp><![CDATA[vuser_init Summary]]></Disp>
+</NodeArgs>
+</Action>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_ga=GA1.3.207652262.1534923554; DOMAIN=demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:20]]></Time>
+<TimeTick>1535029340</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="9" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_gid=GA1.3.1115675473.1534923554; DOMAIN=demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:20]]></Time>
+<TimeTick>1535029340</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="10" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>DNT: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:20]]></Time>
+<TimeTick>1535029340</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="11" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[Url: en]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:22]]></Time>
+<TimeTick>1535029342</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="12" status="Passed" >
+<Disp><![CDATA[Url: en]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>PrestaShop-4bb6ae1aa7371e7b5cfd3bc505157360=def5020073fdb3f753ccbf42ac57e10e430e47abb5e370a2e09d70196264c357fcfa47d2045acd7273f0dee8ff2a460c82d6845987c51e9ef2a57838e1df6808db3b44f5ffd51a09ef4800fee61af121614d6c37e6024cd2ab11767cf2123d373d4782909a5e327e008efce659a8b24247bd34e465e128ba5ec26c01cad13bd8a015f30ec301fc0642eeddebf3426bab303c7d3363d51a1d4887deddc6974c4ffc66523a50214786a0bd274acddfe9b1122a246bdd8d33f0f3129d449a6e2633b1f04276311680e522964f057a063080f0e99d9ded999cdc556027655e1f33d63c57d8e2cfa7c698a0d4; DOMAIN=fo.demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:22]]></Time>
+<TimeTick>1535029342</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="13" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_ga=GA1.3.207652262.1534923554; DOMAIN=fo.demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:22]]></Time>
+<TimeTick>1535029342</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="14" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_gid=GA1.3.1115675473.1534923554; DOMAIN=fo.demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:22]]></Time>
+<TimeTick>1535029342</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="15" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Service: Set Sockets Option]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Set socket option <STRONG><FONT COLOR=#00AF00>SSL_VERSION</FONT></STRONG> with value <STRONG><FONT COLOR=#00AF00>TLS1.2</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:22]]></Time>
+<TimeTick>1535029342</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="16" >
+<Disp><![CDATA[Service: Set Sockets Option]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Link: Explore Front Office]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:24]]></Time>
+<TimeTick>1535029344</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="17" status="Passed" >
+<Disp><![CDATA[Link: Explore Front Office]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T14">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>1P_JAR=2018-08-14-08; DOMAIN=fonts.gstatic.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:24]]></Time>
+<TimeTick>1535029344</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="18" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T15">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>CONSENT=WP.270480; DOMAIN=fonts.gstatic.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:24]]></Time>
+<TimeTick>1535029344</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="19" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>fr=0ZoKS1FL0P0NHPMqZ..BbfRJI...1.0.BbfRJI.; DOMAIN=www.facebook.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:24]]></Time>
+<TimeTick>1535029344</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="20" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Url: adsct]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:25]]></Time>
+<TimeTick>1535029345</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="21" status="Passed" >
+<Disp><![CDATA[Url: adsct]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T18">
+<Obj plainTxt="False" ><![CDATA[Url: rcj-da10bd4908deb9e19dfde013ec3fe4ff.html]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:25]]></Time>
+<TimeTick>1535029345</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="22" status="Passed" >
+<Disp><![CDATA[Url: rcj-da10bd4908deb9e19dfde013ec3fe4ff.html]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t4.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T19">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>personalization_id="v1_HpDmKxQqpBowIXv0JbFrWw=="; DOMAIN=analytics.twitter.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:25]]></Time>
+<TimeTick>1535029345</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="23" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20">
+<Obj plainTxt="False" ><![CDATA[Url: adsct_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:26]]></Time>
+<TimeTick>1535029346</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="24" status="Passed" >
+<Disp><![CDATA[Url: adsct_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t5.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_gat_UA-2753771-28=1; DOMAIN=fo.demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:26]]></Time>
+<TimeTick>1535029346</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="25" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>_hjIncludedInSample=1; DOMAIN=fo.demo.prestashop.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:26]]></Time>
+<TimeTick>1535029346</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="26" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T23">
+<Obj plainTxt="False" ><![CDATA[Url: my-account]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:27]]></Time>
+<TimeTick>1535029347</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="27" status="Passed" >
+<Disp><![CDATA[Url: my-account]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t6.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T24">
+<Obj plainTxt="False" ><![CDATA[Submit Form: login]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:28]]></Time>
+<TimeTick>1535029348</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="28" status="Passed" >
+<Disp><![CDATA[Submit Form: login]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t7.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="23-Aug-18 - 15:02:20" eTime="23-Aug-18 - 15:02:28" passed="7" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="8" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T25">
+<AName><![CDATA[CreateOrder]]></AName>
+<Step rID="T26">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>DNT: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:29]]></Time>
+<TimeTick>1535029349</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="31" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Url: 8-home-accessories]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:29]]></Time>
+<TimeTick>1535029349</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="32" status="Passed" >
+<Disp><![CDATA[Url: 8-home-accessories]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t8.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T28">
+<Obj plainTxt="False" ><![CDATA[Link: Mug The adventure begins]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:30]]></Time>
+<TimeTick>1535029350</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="33" status="Passed" >
+<Disp><![CDATA[Link: Mug The adventure begins]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t9.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T29">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:30]]></Time>
+<TimeTick>1535029350</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="34" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Submit Data: cart]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:30]]></Time>
+<TimeTick>1535029350</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="35" status="Passed" >
+<Disp><![CDATA[Submit Data: cart]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t10.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T31">
+<Obj plainTxt="False" ><![CDATA[Submit Data: ajax]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:31]]></Time>
+<TimeTick>1535029351</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="36" status="Passed" >
+<Disp><![CDATA[Submit Data: ajax]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t11.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[Submit Data: 7-mug-the-adventure-begins.html]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:31]]></Time>
+<TimeTick>1535029351</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="37" status="Passed" >
+<Disp><![CDATA[Submit Data: 7-mug-the-adventure-begins.html]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t12.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T33">
+<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>X-Requested-With</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:31]]></Time>
+<TimeTick>1535029351</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="38" >
+<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T34">
+<Obj plainTxt="False" ><![CDATA[Link: shopping_cart Cart (1)]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:31]]></Time>
+<TimeTick>1535029351</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="39" status="Passed" >
+<Disp><![CDATA[Link: shopping_cart Cart (1)]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t13.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Service: Register Request Attributes]]></Obj>
+<Details plainTxt="False" ><![CDATA[Conversation Information with ID=Poll_0 registered (Pattern=Poll)]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:31]]></Time>
+<TimeTick>1535029351</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="40" >
+<Disp><![CDATA[Service: Register Request Attributes]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T36">
+<Obj plainTxt="False" ><![CDATA[Link: Proceed to checkout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:32]]></Time>
+<TimeTick>1535029352</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="41" status="Passed" >
+<Disp><![CDATA[Link: Proceed to checkout]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t15.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T37">
+<Obj plainTxt="False" ><![CDATA[Service: Stop URL]]></Obj>
+<Details plainTxt="False" ><![CDATA[Successfully stopped Conversation with ID=Poll_0]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:32]]></Time>
+<TimeTick>1535029352</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="42" >
+<Disp><![CDATA[Service: Stop URL]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T38">
+<Obj plainTxt="False" ><![CDATA[Link: &#xE7FF; Sign out]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23-Aug-18 - 15:02:32]]></Time>
+<TimeTick>1535029352</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="43" status="Passed" >
+<Disp><![CDATA[Link: &#xE7FF; Sign out]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t17.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="23-Aug-18 - 15:02:28" eTime="23-Aug-18 - 15:02:32" passed="8" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="30" status="Passed" >
+<Disp><![CDATA[CreateOrder Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="7" status="Passed" >
+<Disp><![CDATA[WebHttpHtml1 Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Action rID="T39">
+<AName><![CDATA[vuser_end]]></AName>
+<Summary sTime="23-Aug-18 - 15:02:32" eTime="23-Aug-18 - 15:02:32" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="46" >
+<Disp><![CDATA[vuser_end Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Summary sTime="23-Aug-18 - 15:02:16" eTime="23-Aug-18 - 15:02:33" passed="15" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
+<Disp><![CDATA[Test WebHttpHtml1 Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>

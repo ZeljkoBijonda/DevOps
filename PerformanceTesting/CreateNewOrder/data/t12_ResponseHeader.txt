@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Thu, 23 Aug 2018 12:55:01 GMT
+Server: Apache
+X-UA-Compatible: IE=edge,chrome=1
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+Powered-By: PrestaShop
+Content-Length: 2877
+Keep-Alive: timeout=5, max=96
+Connection: Keep-Alive
+Content-Type: application/json
+

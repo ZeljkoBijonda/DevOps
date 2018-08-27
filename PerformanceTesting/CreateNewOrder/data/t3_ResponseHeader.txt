@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+content-length: 0
+content-type: text/html;charset=utf-8
+date: Thu, 23 Aug 2018 12:54:00 GMT
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+last-modified: Thu, 23 Aug 2018 12:54:00 GMT
+pragma: no-cache
+server: tsa_b
+status: 200 OK
+x-connection-hash: 8ebac735ac940eb6ca2b73f36a583447
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-response-time: 8
+x-transaction: 00768d8000f36467
+x-twitter-response-tags: BouncerCompliant
+x-xss-protection: 0
+

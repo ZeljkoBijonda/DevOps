@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Thu, 23 Aug 2018 12:53:55 GMT
+Server: Apache
+X-UA-Compatible: IE=edge,chrome=1
+P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+Powered-By: PrestaShop
+Set-Cookie: PHPSESSID=jmb46882ffc1htc7cf324a2as6; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 7908
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=utf-8
+
